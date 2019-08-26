@@ -5,47 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField] [Range(0, 100)] public float movementSpeedIncrement = 50;
+    [SerializeField] [Range(0, 50)] public float movementSpeedIncrement = 25;
     [SerializeField] [Range(0, 100)] public float rotationSpeedIncrement = 50;
-    [SerializeField] [Range(0, 100)] public float maximumRotationSpeed = 200;
+    [SerializeField] [Range(100, 300)] public float maximumRotationSpeed = 150;
     private float currentRotationSpeed;
-
-    [Header("Screen Wrapping")]
-    [SerializeField] public GameObject ghostPrefab;
-    private Transform[] ghosts;
 
     private void Start()
     {
         currentRotationSpeed = 0f;
-
-        PositionGhostShips();
-
-    }
-
-    private void PositionGhostShips()
-    {
-        var cam = Camera.main;
-        var screenBottomLeft = cam.ViewportToWorldPoint(new Vector2(0, 0));
-        var screenTopRight = cam.ViewportToWorldPoint(new Vector2(1, 1));
-        var screenWidth = screenTopRight.x - screenBottomLeft.x;
-        var screenHeight = screenTopRight.y - screenBottomLeft.y;
-
-        ghosts = new Transform[8];
-        for (int i = 0; i < 8; i++)
-        {
-            GameObject ghost = Instantiate(ghostPrefab, this.transform) as GameObject;
-            ghosts[i] = ghost.transform;
-        }
-
-        ghosts[0].position = new Vector2(transform.position.x + screenWidth, transform.position.y);
-        ghosts[1].position = new Vector2(transform.position.x + screenWidth, transform.position.y - screenHeight);
-        ghosts[2].position = new Vector2(transform.position.x, transform.position.y - screenHeight);
-        ghosts[3].position = new Vector2(transform.position.x - screenWidth, transform.position.y - screenHeight);
-        ghosts[4].position = new Vector2(transform.position.x - screenWidth, transform.position.y);
-        ghosts[5].position = new Vector2(transform.position.x - screenWidth, transform.position.y + screenHeight);
-        ghosts[6].position = new Vector2(transform.position.x, transform.position.y + screenHeight);
-        ghosts[7].position = new Vector2(transform.position.x + screenWidth, transform.position.y + screenHeight);
     }
 
     private void Update()
@@ -67,12 +34,12 @@ public class Player : MonoBehaviour
             currentRotationSpeed = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
             Mathf.Clamp(currentRotationSpeed += rotationSpeedIncrement, -maximumRotationSpeed, maximumRotationSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             Mathf.Clamp(currentRotationSpeed -= rotationSpeedIncrement, -maximumRotationSpeed, maximumRotationSpeed);
         }
