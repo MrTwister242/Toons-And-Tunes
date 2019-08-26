@@ -1,7 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+/*  IMPORTANT:
+ *  ----------
+ *  This script uses Render.isVisible to disable colliders on all offscreen (foreground) objects
+ *  A simple method to allow ghost objects for screen wrapping, without impacting collisions
+ *  However, this doesn't work properly when the scene view is visible !  
+ *  (Renderer.isVisible also considers the scene view camera)
+ */
+
 
 public class ScreenWrapper : MonoBehaviour
 {
