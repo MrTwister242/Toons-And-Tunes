@@ -53,7 +53,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1740712395024912812
 MonoBehaviour:
@@ -67,9 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e959d7e78520341a247874b5d66604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeedIncrement: 25
-  rotationSpeedIncrement: 50
-  maximumRotationSpeed: 150
+  movementSpeedIncrement: 20
+  maximumForwardVelocity: 5
+  rotationSpeedIncrement: 20
+  maximumRotationSpeed: 60
 --- !u!114 &2838417133941694598
 MonoBehaviour:
   m_ObjectHideFlags: 0
