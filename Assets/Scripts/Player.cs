@@ -5,15 +5,47 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    [Header("Movement")]
     [SerializeField] [Range(0, 100)] public float movementSpeedIncrement = 50;
     [SerializeField] [Range(0, 100)] public float rotationSpeedIncrement = 50;
     [SerializeField] [Range(0, 100)] public float maximumRotationSpeed = 200;
     private float currentRotationSpeed;
 
+    [Header("Screen Wrapping")]
+    [SerializeField] public GameObject ghostPrefab;
+    private Transform[] ghosts;
+
     private void Start()
     {
         currentRotationSpeed = 0f;
+
+        PositionGhostShips();
+
+    }
+
+    private void PositionGhostShips()
+    {
+        var cam = Camera.main;
+        var screenBottomLeft = cam.ViewportToWorldPoint(new Vector2(0, 0));
+        var screenTopRight = cam.ViewportToWorldPoint(new Vector2(1, 1));
+        var screenWidth = screenTopRight.x - screenBottomLeft.x;
+        var screenHeight = screenTopRight.y - screenBottomLeft.y;
+
+        ghosts = new Transform[8];
+        for (int i = 0; i < 8; i++)
+        {
+            GameObject ghost = Instantiate(ghostPrefab, this.transform) as GameObject;
+            ghosts[i] = ghost.transform;
+        }
+
+        ghosts[0].position = new Vector2(transform.position.x + screenWidth, transform.position.y);
+        ghosts[1].position = new Vector2(transform.position.x + screenWidth, transform.position.y - screenHeight);
+        ghosts[2].position = new Vector2(transform.position.x, transform.position.y - screenHeight);
+        ghosts[3].position = new Vector2(transform.position.x - screenWidth, transform.position.y - screenHeight);
+        ghosts[4].position = new Vector2(transform.position.x - screenWidth, transform.position.y);
+        ghosts[5].position = new Vector2(transform.position.x - screenWidth, transform.position.y + screenHeight);
+        ghosts[6].position = new Vector2(transform.position.x, transform.position.y + screenHeight);
+        ghosts[7].position = new Vector2(transform.position.x + screenWidth, transform.position.y + screenHeight);
     }
 
     private void Update()
@@ -23,14 +55,6 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        //var deltaX = Input.GetAxis("Horizontal");
-        //var deltaY = Input.GetAxis("Vertical");
-        //var newXPos = transform.position.x + deltaX;
-        //var newYPos = transform.position.y + deltaY;
-        //transform.position = new Vector2(newXPos, newYPos);
-
-
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, movementSpeedIncrement));
@@ -54,6 +78,5 @@ public class Player : MonoBehaviour
         }
 
         transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * currentRotationSpeed);
-
     }
 }
