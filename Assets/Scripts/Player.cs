@@ -2,12 +2,18 @@
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] [Range(0, 40)] public float movementSpeedIncrement = 20f;
-    [SerializeField] [Range(0, 10)] public float maximumForwardVelocity = 5f;
-    [SerializeField] [Range(0, 40)] public float rotationSpeedIncrement = 20f;
-    [SerializeField] [Range(40, 80)] public float maximumRotationSpeed = 60f;
-    private float currentRotationSpeed;
+    // Configuration
+    [SerializeField] [Range(0f, 40f)] public float movementSpeedIncrement = 20f;
+    [SerializeField] [Range(0f, 10f)] public float maximumForwardVelocity = 5f;
+    [SerializeField] [Range(0f, 40f)] public float rotationSpeedIncrement = 20f;
+    [SerializeField] [Range(40f, 80f)] public float maximumRotationSpeed = 60f;
+
+    // Cache
     private Rigidbody2D myRigidbody;
+
+    // State
+    private float currentRotationSpeed;
+
 
     private void Start()
     {
@@ -41,6 +47,12 @@ public class Player : MonoBehaviour
             currentRotationSpeed = 0f;
         }
 
+        else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        {
+            myRigidbody.velocity = new Vector2(0, 0);
+            currentRotationSpeed = 0f;
+        }
+
         else if (Input.GetKey(KeyCode.Q))
         {
             Mathf.Clamp(currentRotationSpeed += rotationSpeedIncrement, -maximumRotationSpeed, maximumRotationSpeed);
@@ -51,7 +63,6 @@ public class Player : MonoBehaviour
             Mathf.Clamp(currentRotationSpeed -= rotationSpeedIncrement, -maximumRotationSpeed, maximumRotationSpeed);
         }
 
-        
         transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * currentRotationSpeed);
     }
 }

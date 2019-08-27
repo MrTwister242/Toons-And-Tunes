@@ -11,7 +11,10 @@
 
 public class ScreenWrapper : MonoBehaviour
 {
+    // Configuration
     [SerializeField] public GameObject mainObject;
+
+    // State
     private Transform[] ghosts;
     private float screenWidth;
     private float screenHeight;
