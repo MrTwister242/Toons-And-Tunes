@@ -14,7 +14,8 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //TODO: check weird behaviour after player hits asteroid (forces applied ?)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
         if (damageDealer != null)
@@ -25,7 +26,6 @@ public class Health : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-        //TODO: check why this isn't working
         if(damageDealer.GetAlliance() != alliance)
         {
             currentHealth -= damageDealer.GetDamage();
