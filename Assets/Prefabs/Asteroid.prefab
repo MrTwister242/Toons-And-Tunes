@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b762ebc0ad7780438a170aec38e1214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 20
+  level: 3
+  numberOfFragments: 3
+  asteroidLevelSprites:
+  - {fileID: 21300000, guid: dccf5e556601c1046a55d72dc7b4d6f9, type: 3}
+  - {fileID: 21300000, guid: 20604115d65c17946a100b55e96d6424, type: 3}
+  - {fileID: 21300000, guid: e46fb069bc166784890ac96e3c23402a, type: 3}
+  - {fileID: 21300000, guid: 78a86f6fe9f8e1e43866a0957c036fc4, type: 3}
+  asteroidPrefab: {fileID: 7653220324881982289}
 --- !u!1001 &6010339550022662222
 PrefabInstance:
   m_ObjectHideFlags: 0

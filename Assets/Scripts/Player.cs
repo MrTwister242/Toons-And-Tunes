@@ -4,10 +4,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Configuration
-    [SerializeField] [Range(0f, 40f)] public float movementSpeedIncrement = 20f;
-    [SerializeField] [Range(0f, 10f)] public float maximumForwardVelocity = 5f;
-    [SerializeField] [Range(0f, 40f)] public float rotationSpeedIncrement = 20f;
-    [SerializeField] [Range(40f, 80f)] public float maximumRotationSpeed = 60f;
+    [SerializeField] [Range(0f, 40f)] float movementSpeedIncrement = 20f;
+    [SerializeField] [Range(0f, 10f)] float maximumForwardVelocity = 5f;
+    [SerializeField] [Range(0f, 40f)] float rotationSpeedIncrement = 20f;
+    [SerializeField] [Range(40f, 80f)] float maximumRotationSpeed = 60f;
 
     // Cache
     private Rigidbody2D myRigidbody;

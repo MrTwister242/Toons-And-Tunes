@@ -12,7 +12,7 @@
 public class ScreenWrapper : MonoBehaviour
 {
     // Configuration
-    [SerializeField] public GameObject mainObject;
+    [SerializeField] GameObject mainObject;
 
     // State
     private Transform[] ghosts;

@@ -13,7 +13,7 @@ public class Shooter : MonoBehaviour
 
     [Header("Enemies Only")]
     [SerializeField] [Range(0f, 2f)] float projectileFiringVariance = 0.5f;
-    [SerializeField] bool shootAutomatically;
+    [SerializeField] bool shootAutomatically = false;
 
     // State
     private Coroutine shootingCoroutine;
