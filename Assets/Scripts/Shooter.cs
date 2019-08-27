@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    //TODO: Shooter class should not be taking input to allow use by enemies
+
     // Configuration
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] [Range(100f, 500f)] float projectileSpeed = 250f;
