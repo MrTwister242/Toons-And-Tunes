@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
@@ -8,6 +6,10 @@ public class Shooter : MonoBehaviour
     // Configuration
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] [Range(100f, 500f)] float projectileSpeed = 250f;
+    [SerializeField] [Range(0f, 2f)] float projectileFiringInterval = 0.1f;
+
+    // State
+    private Coroutine shootingCoroutine;
 
     private void Update()
     {
@@ -16,11 +18,23 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shootingCoroutine = StartCoroutine(ShootContinuously());
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(shootingCoroutine);
+        }
+    }
+
+    IEnumerator ShootContinuously()
+    {
+        while (true)
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation) as GameObject;
             projectile.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, projectileSpeed));
-            //TODO: add cooldown between projectiles
+            yield return new WaitForSeconds(projectileFiringInterval);
         }
     }
 }

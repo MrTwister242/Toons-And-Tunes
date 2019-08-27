@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1740712395024912812}
   - component: {fileID: 2838417133941694598}
   - component: {fileID: 7564789215231477060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1318932380130041338, guid: 44efc968f0c1ac54fbb9b15ca1ca8792,
     type: 3}
   projectileSpeed: 250
+  projectileFiringInterval: 0.1
 --- !u!1 &4161561027935748571
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +112,7 @@ GameObject:
   - component: {fileID: 4978026142542344414}
   - component: {fileID: 6596142348542116023}
   - component: {fileID: 3824562751270403523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
