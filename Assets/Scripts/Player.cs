@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -10,20 +11,22 @@ public class Player : MonoBehaviour
 
     // Cache
     private Rigidbody2D myRigidbody;
+    private Shooter shooter;
 
     // State
     private float currentRotationSpeed;
 
-
     private void Start()
     {
         currentRotationSpeed = 0f;
-        myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        myRigidbody = GetComponent<Rigidbody2D>();
+        shooter = GetComponent<Shooter>();
     }
 
     private void LateUpdate()
     {
         Move();
+        Shoot();
     }
 
     private void Move()
@@ -64,5 +67,17 @@ public class Player : MonoBehaviour
         }
 
         transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * currentRotationSpeed);
+    }
+
+    private void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shooter.ToggleShooting(true);
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            shooter.ToggleShooting(false);
+        }
     }
 }
