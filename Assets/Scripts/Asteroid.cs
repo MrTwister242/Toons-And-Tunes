@@ -26,6 +26,7 @@ public class Asteroid : MonoBehaviour
         myRigidbody.AddRelativeForce(transform.up * movementSpeed);
     }
 
+    //TODO: not working correctly
     private void OnDestroy()
     {
         Debug.Log("test ondestroy");

@@ -309,6 +309,16 @@ PrefabInstance:
       propertyPath: projectileFiringVariance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2136992415420838514, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: alliance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041395309123857156, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1740712395024912812, guid: e9057f96caf2e874286b8d9fa96ca1f3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9057f96caf2e874286b8d9fa96ca1f3, type: 3}

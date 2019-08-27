@@ -98,5 +98,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 4b8c9001723c7de4383272909d977d43,
         type: 3}
+    - target: {fileID: 2914098069074165084, guid: 44efc968f0c1ac54fbb9b15ca1ca8792,
+        type: 3}
+      propertyPath: alliance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914098069074165084, guid: 44efc968f0c1ac54fbb9b15ca1ca8792,
+        type: 3}
+      propertyPath: destroyOnHit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914098069074165084, guid: 44efc968f0c1ac54fbb9b15ca1ca8792,
+        type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44efc968f0c1ac54fbb9b15ca1ca8792, type: 3}
