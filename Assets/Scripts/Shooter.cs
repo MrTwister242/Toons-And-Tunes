@@ -6,7 +6,7 @@ public class Shooter : MonoBehaviour
     // Configuration
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] [Range(100f, 500f)] float projectileSpeed = 250f;
-    [SerializeField] [Range(0f, 2f)] float projectileFiringInterval = 0.1f;
+    [SerializeField] [Range(0f, 1f)] float projectileFiringInterval = 0.2f;
 
     // State
     private Coroutine shootingCoroutine;
