@@ -5,10 +5,8 @@ public class Asteroid : MonoBehaviour
 {
     // Configuration
     [SerializeField] [Range(0f, 40f)] float movementSpeed = 20f;
-    [SerializeField] [Range(0, 3)] int level = 3;
     [SerializeField] [Range(2, 6)] int numberOfFragments = 3;
-    [SerializeField] List<Sprite> asteroidLevelSprites;
-    [SerializeField] GameObject asteroidPrefab;
+    [SerializeField] GameObject nextLevelPrefab;
 
     // Cache
     private Rigidbody2D myRigidbody;
@@ -26,19 +24,14 @@ public class Asteroid : MonoBehaviour
         myRigidbody.AddRelativeForce(transform.up * movementSpeed);
     }
 
-    //TODO: not working correctly
-    private void OnDestroy()
+    public void Shatter()
     {
-        Debug.Log("test ondestroy");
-        if (level > 0)
+        if (nextLevelPrefab != null)
         {
             for (int i = 0; i < numberOfFragments; i++)
             {
-                GameObject fragment = Instantiate(asteroidPrefab, this.transform) as GameObject;
-                fragment.GetComponent<Asteroid>().level = level - 1;
-                fragment.GetComponentInChildren<SpriteRenderer>().sprite = asteroidLevelSprites[level];
+                GameObject fragment = Instantiate(nextLevelPrefab, transform.position, Quaternion.identity) as GameObject;
             }
         }
     }
-
 }

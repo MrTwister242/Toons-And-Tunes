@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 150
-  alliance: 0
+  alliance: 2
 --- !u!1 &4161561027935748571
 GameObject:
   m_ObjectHideFlags: 0

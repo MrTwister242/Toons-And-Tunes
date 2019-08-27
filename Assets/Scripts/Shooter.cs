@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    //TODO: Shooter class should not be taking input to allow use by enemies
-
     // Configuration
     [Header("All")]
     [SerializeField] GameObject projectilePrefab;

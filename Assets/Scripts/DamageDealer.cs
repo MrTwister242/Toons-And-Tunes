@@ -22,7 +22,6 @@ public class DamageDealer : MonoBehaviour
 
     public void Hit()
     {
-        //TODO: should only apply to projectiles
         if (destroyOnHit)
         {
             Destroy(gameObject);

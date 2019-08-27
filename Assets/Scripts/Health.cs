@@ -25,13 +25,21 @@ public class Health : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)
     {
+        //TODO: check why this isn't working
         if(damageDealer.GetAlliance() != alliance)
-        maxHealth -= damageDealer.GetDamage();
-        damageDealer.Hit();
-        if (maxHealth <= 0f)
         {
-            //TODO: destruction animations - maybe shatter asteroids from here ?
-            Destroy(gameObject);
+            currentHealth -= damageDealer.GetDamage();
+            damageDealer.Hit();
+            if (currentHealth <= 0f)
+            {
+                //TODO: destruction animations
+                Asteroid asteroid = GetComponent<Asteroid>();
+                if (asteroid != null)
+                {
+                    asteroid.Shatter();
+                }
+                Destroy(gameObject);
+            }
         }
 
     }

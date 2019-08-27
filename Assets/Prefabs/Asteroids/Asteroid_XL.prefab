@@ -13,14 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  level: 3
   numberOfFragments: 3
-  asteroidLevelSprites:
-  - {fileID: 21300000, guid: dccf5e556601c1046a55d72dc7b4d6f9, type: 3}
-  - {fileID: 21300000, guid: 20604115d65c17946a100b55e96d6424, type: 3}
-  - {fileID: 21300000, guid: e46fb069bc166784890ac96e3c23402a, type: 3}
-  - {fileID: 21300000, guid: 78a86f6fe9f8e1e43866a0957c036fc4, type: 3}
-  asteroidPrefab: {fileID: 7653220324881982289}
+  nextLevelPrefab: {fileID: 4664988400354206034, guid: 5e5053aefc7fe534b951270cc67474cf,
+    type: 3}
 --- !u!1001 &6010339550022662222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 4133372811990735647, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
       propertyPath: m_Name
-      value: Asteroid
+      value: Asteroid_XL
       objectReference: {fileID: 0}
     - target: {fileID: 4133372811990735647, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
@@ -41,12 +36,12 @@ PrefabInstance:
     - target: {fileID: 4042172378924398649, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4042172378924398649, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4042172378924398649, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
@@ -199,10 +194,20 @@ PrefabInstance:
       propertyPath: damage
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 2136992415420838514, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: alliance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3041395309123857156, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
       propertyPath: maxHealth
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041395309123857156, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: alliance
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3, type: 3}
