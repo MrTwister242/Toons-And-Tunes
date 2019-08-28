@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4042172378924398649}
   - component: {fileID: -9039040477703685777}
-  - component: {fileID: 1740712395024912812}
   - component: {fileID: 2838417133941694598}
-  - component: {fileID: 7564789215231477060}
-  - component: {fileID: 2136992415420838514}
   - component: {fileID: 3041395309123857156}
+  - component: {fileID: 2136992415420838514}
   m_Layer: 0
   m_Name: MovingObject
   m_TagString: Untagged
@@ -58,22 +56,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1740712395024912812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4133372811990735647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e959d7e78520341a247874b5d66604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeedIncrement: 20
-  maximumForwardVelocity: 5
-  rotationSpeedIncrement: 10
-  maximumRotationSpeed: 60
 --- !u!114 &2838417133941694598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainObject: {fileID: 4161561027935748571}
---- !u!114 &7564789215231477060
+--- !u!114 &3041395309123857156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,15 +78,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4133372811990735647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2d493fcd2c6ac4f85820fa766093fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 962681a5ac343a349a32e7ee8b81f5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1318932380130041338, guid: 44efc968f0c1ac54fbb9b15ca1ca8792,
-    type: 3}
-  projectileSpeed: 250
-  projectileFiringInterval: 0.2
-  projectileFiringVariance: 0.5
-  shootAutomatically: 0
+  maxHealth: 150
+  alliance: 2
 --- !u!114 &2136992415420838514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,20 +98,6 @@ MonoBehaviour:
   damage: 100
   alliance: 2
   destroyOnHit: 0
---- !u!114 &3041395309123857156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4133372811990735647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962681a5ac343a349a32e7ee8b81f5d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
-  alliance: 2
 --- !u!1 &4161561027935748571
 GameObject:
   m_ObjectHideFlags: 0
