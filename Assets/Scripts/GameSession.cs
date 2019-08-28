@@ -22,11 +22,11 @@ public class GameSession : MonoBehaviour
         }
     }
 
-    public void Start()
+    private void Start()
     {
         currentLives = startingLives;
     }
-
+    
     public int GetCurrentLives()
     {
         return currentLives;

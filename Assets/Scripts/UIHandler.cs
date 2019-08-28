@@ -14,6 +14,7 @@ public class UIHandler : MonoBehaviour
 
     public void OnStartButtonPressed()
     {
+        FindObjectOfType<GameSession>().Reset();
         sceneLoader.StartGame();
     }
 

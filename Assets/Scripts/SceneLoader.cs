@@ -10,7 +10,8 @@ public class SceneLoader : MonoBehaviour
     int main = 1;
     int options = 2;
     int gameOver = 3;
-    int firstLevel = 4;
+    int win = 4;
+    int firstLevel = 5;
 
     // state
     private int currentSceneIndex;
@@ -37,6 +38,16 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        bool isLevelFinished = (currentSceneIndex >= firstLevel && !IsactiveEnemies());
+        if (isLevelFinished)
+        {
+            LoadNextLevel();
+        }
+    }
+
     IEnumerator TransitionToMainMenu()
     {
         yield return new WaitForSeconds(flashScreenTime);
@@ -50,9 +61,15 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        LoadScene(sceneIndex + 1);
-        // Exception handling when we finish the last level
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (sceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            LoadScene(win);
+        }
+        else
+        {
+            LoadScene(sceneIndex);
+        }
     }
 
     public void ReloadLevel()
@@ -84,6 +101,20 @@ public class SceneLoader : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    private bool IsactiveEnemies()
+    {
+        bool isActiveEnemies = false;
+        Health[] objectsWithHealth = FindObjectsOfType<Health>();
+        foreach (Health health in objectsWithHealth)
+        {
+            if (health.GetAlliance() != Alliance.friendly)
+            {
+                isActiveEnemies = true;
+            }
+        }
+        return isActiveEnemies;
     }
 
 }

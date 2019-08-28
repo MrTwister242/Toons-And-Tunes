@@ -63,4 +63,9 @@ public class Health : MonoBehaviour
         }
 
     }
+
+    public Alliance GetAlliance()
+    {
+        return alliance;
+    }
 }
