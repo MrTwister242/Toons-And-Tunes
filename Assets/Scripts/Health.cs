@@ -41,13 +41,24 @@ public class Health : MonoBehaviour
             damageDealer.Hit();
             if (currentHealth <= 0f)
             {
-                //TODO: destruction animations
-                Asteroid asteroid = GetComponent<Asteroid>();
-                if (asteroid != null)
+                Player player = GetComponent<Player>();
+                if (player != null)
                 {
-                    asteroid.Shatter();
+                    Destroy(gameObject);
+                    FindObjectOfType<GameSession>().PlayerDies();
+                    //TODO: add delay
                 }
-                Destroy(gameObject);
+                else
+                {
+                    //TODO: destruction animations
+                    Asteroid asteroid = GetComponent<Asteroid>();
+                    if (asteroid != null)
+                    {
+                        asteroid.Shatter();
+                    }
+                    Destroy(gameObject);
+                }
+
             }
         }
 

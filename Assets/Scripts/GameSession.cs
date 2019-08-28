@@ -41,15 +41,15 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            // Tell the scene loader to reload the scene
-            throw new NotImplementedException();
+            //TODO: add a delay
+            FindObjectOfType<SceneLoader>().ReloadLevel();
         }
     }
 
     private void GameOver()
     {
-        // Tell the scene loader to load the game over screen
-        throw new NotImplementedException();
+        //TODO: add a delay
+        FindObjectOfType<SceneLoader>().LoadGameOver();
     }
 
     public void Reset()

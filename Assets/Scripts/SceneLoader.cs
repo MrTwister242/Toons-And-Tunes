@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +6,11 @@ public class SceneLoader : MonoBehaviour
 {
     // configuration
     [SerializeField] [Range(0, 20)] int flashScreenTime = 4;
+    int splash = 0;
+    int main = 1;
+    int options = 2;
+    int gameOver = 3;
+    int firstLevel = 4;
 
     // state
     private int currentSceneIndex;
@@ -48,6 +52,7 @@ public class SceneLoader : MonoBehaviour
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         LoadScene(sceneIndex + 1);
+        // Exception handling when we finish the last level
     }
 
     public void ReloadLevel()
@@ -56,19 +61,24 @@ public class SceneLoader : MonoBehaviour
         LoadScene(sceneIndex);
     }
 
+    public void LoadGameOver()
+    {
+        LoadScene(gameOver);
+    }
+
     public void StartGame()
     {
-        LoadScene(3);
+        LoadScene(firstLevel);
     }
 
     public void LoadOptions()
     {
-        LoadScene(2);
+        LoadScene(options);
     }
 
     public void LoadMainMenu()
     {
-        LoadScene(1);
+        LoadScene(main);
     }
 
     public void Quit()
