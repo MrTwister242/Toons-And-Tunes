@@ -41,12 +41,20 @@ public class GameSession : MonoBehaviour
         }
         else
         {
+            // Tell the scene loader to reload the scene
             throw new NotImplementedException();
         }
     }
 
     private void GameOver()
     {
+        // Tell the scene loader to load the game over screen
         throw new NotImplementedException();
     }
+
+    public void Reset()
+    {
+        Destroy(gameObject);
+    }
+
 }
