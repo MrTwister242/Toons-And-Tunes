@@ -1,18 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
     [SerializeField] TMPro.TextMeshProUGUI headerText;
+    [SerializeField] RawImage[] livesImages;
 
     // State
     SceneLoader sceneLoader;
+    GameSession gameSession;
 
     private void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
+        RefreshLivesDisplay();
+    }
+
+    private void LateUpdate()
+    {
+        RefreshLivesDisplay();
+    }
+
+    private void RefreshLivesDisplay()
+    {
+        if (livesImages != null && livesImages.Length > 0)
+        {
+            int lives = gameSession.GetCurrentLives();
+            for (int i = 0; i < livesImages.Length; i++)
+            {
+                livesImages[i].gameObject.SetActive(i < lives - 1);
+            }
+        }
     }
 
     public void OnStartButtonPressed()
@@ -51,11 +71,6 @@ public class UIHandler : MonoBehaviour
     public void UpdateHeader(string header)
     {
         headerText.text = header;
-    }
-
-    public void UpdatesLivesDisplay()
-    {
-        //TODO: implement lives display
     }
 
 }

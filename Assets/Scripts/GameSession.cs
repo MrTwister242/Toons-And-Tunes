@@ -7,7 +7,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] [Range(1, 5)] int startingLives = 3;
 
     // State
-    private int currentLives;
+    [SerializeField] int currentLives;
     private int score;
 
     private void Awake()

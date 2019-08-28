@@ -638,3 +638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f589b432798234044b1eaf988e794a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  headerText: {fileID: 0}
+  livesImages:
+  - {fileID: 404725094}
+  - {fileID: 1659517114}
+  - {fileID: 196258102}
+  - {fileID: 869483060}
