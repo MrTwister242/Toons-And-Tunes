@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
+        //TODO: Sometimes player gets stuck in continuous shooting
         if (Input.GetButtonDown("Fire1"))
         {
             shooter.ToggleShooting(true);

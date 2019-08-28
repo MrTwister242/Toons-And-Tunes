@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Options Menu.unity
     guid: 5a18d19f2b57f984a8ebc26a304a8f52
   - enabled: 1
-    path: Assets/Scenes/Game Over.unity
-    guid: 48c201f640a53ac4ba5470c5852cd085
-  - enabled: 1
     path: Assets/Scenes/Win Screen.unity
     guid: dd62f8b983cb912489a306c5cab9224d
   - enabled: 1

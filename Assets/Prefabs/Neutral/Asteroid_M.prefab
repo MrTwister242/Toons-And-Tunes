@@ -71,8 +71,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevelPrefab
       value: 
-      objectReference: {fileID: 7118341104637074193, guid: ef3c97ec36da0f841b1b93d86b59d2ce,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 640416589112899833, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
       propertyPath: m_Sprite

@@ -8,6 +8,7 @@ public class GameSession : MonoBehaviour
 
     // State
     private int currentLives;
+    private int score;
 
     private void Awake()
     {
@@ -25,6 +26,11 @@ public class GameSession : MonoBehaviour
     private void Start()
     {
         currentLives = startingLives;
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
     
     public int GetCurrentLives()

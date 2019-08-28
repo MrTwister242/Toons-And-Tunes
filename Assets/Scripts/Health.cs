@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    //TODO: check weird behaviour after player hits asteroid (forces applied ?)
+    //TODO: check weird behaviour after asteroid collisions (forces applied when reaching edge of the screen ?)
     private void OnCollisionEnter2D(Collision2D collision)
     {
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();

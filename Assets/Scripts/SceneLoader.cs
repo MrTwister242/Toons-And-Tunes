@@ -10,8 +10,7 @@ public class SceneLoader : MonoBehaviour
     int main = 1;
     int options = 2;
     int gameOver = 3;
-    int win = 4;
-    int firstLevel = 5;
+    int firstLevel = 4;
 
     // state
     private int currentSceneIndex;
@@ -64,7 +63,7 @@ public class SceneLoader : MonoBehaviour
         int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (sceneIndex == SceneManager.sceneCountInBuildSettings)
         {
-            LoadScene(win);
+            LoadScene(gameOver);
         }
         else
         {

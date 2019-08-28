@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIHandler : MonoBehaviour
 {
+    [SerializeField] TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] TMPro.TextMeshProUGUI headerText;
+
     // State
     SceneLoader sceneLoader;
 
@@ -39,4 +42,20 @@ public class UIHandler : MonoBehaviour
         FindObjectOfType<GameSession>().Reset();
         sceneLoader.StartGame();
     }
+
+    public void UpdateScore(int score)
+    {
+        scoreText.text = score.ToString();
+    }
+
+    public void UpdateHeader(string header)
+    {
+        headerText.text = header;
+    }
+
+    public void UpdatesLivesDisplay()
+    {
+        //TODO: implement lives display
+    }
+
 }
