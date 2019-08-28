@@ -7,8 +7,9 @@ public class GameSession : MonoBehaviour
     [SerializeField] [Range(1, 5)] int startingLives = 3;
 
     // State
+    //TODO: make private after debugging
     [SerializeField] int currentLives;
-    private int score;
+    [SerializeField] float score;
 
     private void Awake()
     {
@@ -28,7 +29,12 @@ public class GameSession : MonoBehaviour
         currentLives = startingLives;
     }
 
-    public int GetScore()
+    public void IncreaseScore(float amount)
+    {
+        score += amount;
+    }
+
+    public float GetScore()
     {
         return score;
     }

@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_M
       objectReference: {fileID: 0}
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: nextLevelPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7742160166060802167, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,10 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+    - target: {fileID: 8744925124467692362, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
-      propertyPath: nextLevelPrefab
-      value: 
+      propertyPath: scoreValue
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 640416589112899833, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}

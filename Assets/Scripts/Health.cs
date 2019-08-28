@@ -5,6 +5,7 @@ public class Health : MonoBehaviour
     // Configuration
     [SerializeField] [Range(100f, 500f)] float maxHealth = 250f;
     [SerializeField] Alliance alliance = Alliance.neutral;
+    [SerializeField] [Range(100f, 2000f)] float scoreValue = 500f;
 
     // State
     private float currentHealth;
@@ -50,6 +51,7 @@ public class Health : MonoBehaviour
                 }
                 else
                 {
+                    FindObjectOfType<GameSession>().IncreaseScore(scoreValue);
                     //TODO: destruction animations
                     Asteroid asteroid = GetComponent<Asteroid>();
                     if (asteroid != null)

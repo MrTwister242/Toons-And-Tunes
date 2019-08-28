@@ -12,6 +12,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_XL
       objectReference: {fileID: 0}
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: nextLevelPrefab
+      value: 
+      objectReference: {fileID: 4664988400354206034, guid: 5e5053aefc7fe534b951270cc67474cf,
+        type: 3}
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: numberOfFragments
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7742160166060802167, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,16 +78,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+    - target: {fileID: 8744925124467692362, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
-      propertyPath: nextLevelPrefab
-      value: 
-      objectReference: {fileID: 4664988400354206034, guid: 5e5053aefc7fe534b951270cc67474cf,
-        type: 3}
-    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
-        type: 3}
-      propertyPath: numberOfFragments
-      value: 2
+      propertyPath: scoreValue
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff07d6c4398925241962022fd8f468e9, type: 3}
