@@ -13,6 +13,7 @@ public class GameSession : MonoBehaviour
 
     private void Awake()
     {
+        currentLives = startingLives;
         int numberOfGameSessions = FindObjectsOfType<GameSession>().Length;
         if (numberOfGameSessions > 1)
         {
@@ -22,11 +23,7 @@ public class GameSession : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
-    }
 
-    private void Start()
-    {
-        currentLives = startingLives;
     }
 
     public void IncreaseScore(float amount)

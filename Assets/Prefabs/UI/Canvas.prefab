@@ -800,9 +800,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f589b432798234044b1eaf988e794a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  headerText: {fileID: 0}
-  livesImages: []
+  scoreText: {fileID: 12954068}
+  headerText: {fileID: 8656238333158981316}
+  livesImages:
+  - {fileID: 404725094}
+  - {fileID: 1659517114}
+  - {fileID: 196258102}
+  - {fileID: 869483060}
 --- !u!1001 &423470064329460898
 PrefabInstance:
   m_ObjectHideFlags: 0

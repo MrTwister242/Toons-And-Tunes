@@ -18,7 +18,7 @@ public class UIHandler : MonoBehaviour
         RefreshLivesDisplay();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         RefreshLivesDisplay();
     }
@@ -30,7 +30,8 @@ public class UIHandler : MonoBehaviour
             int lives = gameSession.GetCurrentLives();
             for (int i = 0; i < livesImages.Length; i++)
             {
-                livesImages[i].gameObject.SetActive(i < lives - 1);
+                bool toDisplay = i < lives - 1;
+                livesImages[i].enabled = toDisplay;
             }
         }
     }

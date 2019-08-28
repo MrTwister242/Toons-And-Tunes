@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1041429593802248376}
   - component: {fileID: 5816490994010952684}
-  - component: {fileID: 3247876907719654371}
   m_Layer: 0
   m_Name: GameSession
   m_TagString: Untagged
@@ -47,18 +46,3 @@ MonoBehaviour:
   startingLives: 5
   currentLives: 0
   score: 0
---- !u!114 &3247876907719654371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970607917773314683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f589b432798234044b1eaf988e794a79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  headerText: {fileID: 0}
-  livesImages: []
