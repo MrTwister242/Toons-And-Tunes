@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
     [SerializeField] [Range(100f, 500f)] float maxHealth = 250f;
     [SerializeField] Alliance alliance = Alliance.neutral;
     [SerializeField] [Range(100f, 2000f)] float scoreValue = 500f;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip shatterSound;
 
     // State
     private float currentHealth;
@@ -42,11 +44,12 @@ public class Health : MonoBehaviour
             damageDealer.Hit();
             if (currentHealth <= 0f)
             {
-                Player player = GetComponent<Player>();
+                PlayerInput player = GetComponent<PlayerInput>();
                 if (player != null)
                 {
                     Destroy(gameObject);
                     FindObjectOfType<GameSession>().PlayerDies();
+                    AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position);
                     //TODO: add delay
                 }
                 else
@@ -57,6 +60,7 @@ public class Health : MonoBehaviour
                     if (asteroid != null)
                     {
                         asteroid.Shatter();
+                        AudioSource.PlayClipAtPoint(shatterSound, Camera.main.transform.position);
                     }
                     Destroy(gameObject);
                 }

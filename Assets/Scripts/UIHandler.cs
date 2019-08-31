@@ -3,9 +3,12 @@ using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
+    // Configuration
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
     [SerializeField] TMPro.TextMeshProUGUI headerText;
+    [SerializeField] GameObject livesPanel;
     [SerializeField] RawImage[] livesImages;
+    [SerializeField] AudioClip buttonSound;
 
     // State
     SceneLoader sceneLoader;
@@ -15,20 +18,30 @@ public class UIHandler : MonoBehaviour
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
         gameSession = FindObjectOfType<GameSession>();
-        RefreshLivesDisplay();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         RefreshLivesDisplay();
+        RefreshScoreDisplay();
+    }
+
+    private void RefreshScoreDisplay()
+    {
+        if (scoreText.gameObject.activeInHierarchy)
+        {
+            float score = gameSession.GetScore();
+            scoreText.text = score.ToString();
+        }
     }
 
     private void RefreshLivesDisplay()
     {
-        if (livesImages != null && livesImages.Length > 0)
+        if (livesPanel.activeInHierarchy)
         {
             int lives = gameSession.GetCurrentLives();
-            for (int i = 0; i < livesImages.Length; i++)
+            int iterations = livesImages.Length;
+            for (int i = 0; i < iterations; i++)
             {
                 bool toDisplay = i < lives - 1;
                 livesImages[i].enabled = toDisplay;
@@ -38,29 +51,33 @@ public class UIHandler : MonoBehaviour
 
     public void OnStartButtonPressed()
     {
-        FindObjectOfType<GameSession>().Reset();
+        PlayButtonSound();
+        FindObjectOfType<GameSession>().ResetSession();
         sceneLoader.StartGame();
     }
 
     public void OnOptionsButtonPressed()
     {
+        PlayButtonSound();
         sceneLoader.LoadOptions();
-
     }
 
     public void OnQuitButtonPressed()
     {
+        PlayButtonSound();
         sceneLoader.Quit();
     }
 
     public void OnBackButtonPressed()
     {
+        PlayButtonSound();
         sceneLoader.LoadMainMenu();
     }
 
     public void OnPlayAgainButtonPressed()
     {
-        FindObjectOfType<GameSession>().Reset();
+        PlayButtonSound();
+        FindObjectOfType<GameSession>().ResetSession();
         sceneLoader.StartGame();
     }
 
@@ -74,4 +91,8 @@ public class UIHandler : MonoBehaviour
         headerText.text = header;
     }
 
+    private void PlayButtonSound()
+    {
+        AudioSource.PlayClipAtPoint(buttonSound, Camera.main.transform.position);
+    }
 }

@@ -802,11 +802,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 12954068}
   headerText: {fileID: 8656238333158981316}
+  livesPanel: {fileID: 1616982390}
   livesImages:
   - {fileID: 404725094}
   - {fileID: 1659517114}
   - {fileID: 196258102}
   - {fileID: 869483060}
+  buttonSound: {fileID: 8300000, guid: 72f7fb4b22b956c469dec54f416e2bd5, type: 3}
 --- !u!1001 &423470064329460898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -818,26 +820,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Menu Button (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
         type: 3}
@@ -944,26 +926,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 128b25ef775e0834a8af059d3a70f2ee, type: 3}
---- !u!224 &734521732177094591 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 423470064329460898}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6572829963059486485
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7779333535847230496}
-    m_Modifications:
-    - target: {fileID: 8473166710894701999, guid: 128b25ef775e0834a8af059d3a70f2ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Menu Button
-      objectReference: {fileID: 0}
     - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -983,6 +945,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 128b25ef775e0834a8af059d3a70f2ee, type: 3}
+--- !u!224 &734521732177094591 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 423470064329460898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6572829963059486485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7779333535847230496}
+    m_Modifications:
+    - target: {fileID: 8473166710894701999, guid: 128b25ef775e0834a8af059d3a70f2ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Menu Button
       objectReference: {fileID: 0}
     - target: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
         type: 3}
@@ -1089,26 +1071,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 128b25ef775e0834a8af059d3a70f2ee, type: 3}
---- !u!224 &6117751274257691656 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 6572829963059486485}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8601137391835600569
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7779333535847230496}
-    m_Modifications:
-    - target: {fileID: 8473166710894701999, guid: 128b25ef775e0834a8af059d3a70f2ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Menu Button (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1128,6 +1090,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 128b25ef775e0834a8af059d3a70f2ee, type: 3}
+--- !u!224 &6117751274257691656 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 6572829963059486485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8601137391835600569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7779333535847230496}
+    m_Modifications:
+    - target: {fileID: 8473166710894701999, guid: 128b25ef775e0834a8af059d3a70f2ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Menu Button (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
         type: 3}
@@ -1232,6 +1214,26 @@ PrefabInstance:
     - target: {fileID: 1139969635780061981, guid: 128b25ef775e0834a8af059d3a70f2ee,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860149391627195429, guid: 128b25ef775e0834a8af059d3a70f2ee,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

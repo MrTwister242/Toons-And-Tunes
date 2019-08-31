@@ -4,20 +4,32 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     // Configuration
-    [Header("All")]
+    [Header("Shooting")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] [Range(100f, 500f)] float projectileSpeed = 250f;
     [SerializeField] [Range(0f, 3f)] float projectileFiringInterval = 0.2f;
-
-    [Header("Enemies Only")]
     [SerializeField] [Range(0f, 2f)] float projectileFiringVariance = 0.5f;
-    [SerializeField] bool shootAutomatically = false;
+    private bool shootAutomatically;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip playerShootingSound;
+    [SerializeField] AudioClip enemyShootingSound;
 
     // State
     private Coroutine shootingCoroutine;
 
+
     private void Start()
     {
+        PlayerInput player = GetComponent<PlayerInput>();
+        if(player != null)
+        {
+            shootAutomatically = false;
+        }
+        else
+        {
+            shootAutomatically = true;
+        }
         ToggleShooting(shootAutomatically);
     }
 
@@ -39,6 +51,14 @@ public class Shooter : MonoBehaviour
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation) as GameObject;
             projectile.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, projectileSpeed));
+            if (shootAutomatically)
+            {
+                AudioSource.PlayClipAtPoint(enemyShootingSound, Camera.main.transform.position);
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(playerShootingSound, Camera.main.transform.position);
+            }
             float timeBetweenShots = projectileFiringInterval + (shootAutomatically ? projectileFiringVariance : 0f);
             yield return new WaitForSeconds(timeBetweenShots);
         }

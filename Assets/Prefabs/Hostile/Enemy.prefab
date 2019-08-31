@@ -17,7 +17,8 @@ MonoBehaviour:
   projectileSpeed: 250
   projectileFiringInterval: 0.2
   projectileFiringVariance: 0.5
-  shootAutomatically: 1
+  playerShootingSound: {fileID: 0}
+  enemyShootingSound: {fileID: 8300000, guid: a39edd7245130ec4a951a5b5e35fd357, type: 3}
 --- !u!1001 &1998310980475619340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,22 +105,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
-        type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 7782424933963810398, guid: 66b541fee8647db4b94d4a45dc112875,
-        type: 3}
-    - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
-        type: 3}
-      propertyPath: shootAutomatically
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
-        type: 3}
-      propertyPath: projectileFiringVariance
-      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4161561027935748571, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
@@ -366,6 +351,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7782424933963810398, guid: 66b541fee8647db4b94d4a45dc112875,
+        type: 3}
+    - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: shootAutomatically
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: projectileFiringVariance
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1740712395024912812, guid: e9057f96caf2e874286b8d9fa96ca1f3, type: 3}

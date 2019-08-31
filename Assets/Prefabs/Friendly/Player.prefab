@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e959d7e78520341a247874b5d66604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeedIncrement: 20
-  maximumForwardVelocity: 5
-  rotationSpeedIncrement: 10
-  maximumRotationSpeed: 60
 --- !u!114 &6947422104992677659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,7 +29,24 @@ MonoBehaviour:
   projectileSpeed: 250
   projectileFiringInterval: 0.2
   projectileFiringVariance: 0.5
-  shootAutomatically: 0
+  playerShootingSound: {fileID: 8300000, guid: a87ef543bd2aa354eabb6cd23e3eed8d, type: 3}
+  enemyShootingSound: {fileID: 0}
+--- !u!114 &6014057238740616094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493662238185013441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ace21a4f0b77724b8a227bd6b162202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeedIncrement: 20
+  maximumForwardVelocity: 5
+  rotationSpeedIncrement: 20
+  maximumRotationSpeed: 60
 --- !u!1001 &659579329814059998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,6 +63,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041395309123857156, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a4d8ff4466a5cb42930828337dc588e, type: 3}
+    - target: {fileID: 3041395309123857156, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: chatterSound
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4042172378924398649, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
@@ -106,17 +129,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4161561027935748571, guid: e9057f96caf2e874286b8d9fa96ca1f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7564789215231477060, guid: e9057f96caf2e874286b8d9fa96ca1f3,
         type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7073752402727371193, guid: f519657f44945894dad46ed122e75a89,
         type: 3}
-    - target: {fileID: 4161561027935748571, guid: e9057f96caf2e874286b8d9fa96ca1f3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9057f96caf2e874286b8d9fa96ca1f3, type: 3}
 --- !u!1 &3493662238185013441 stripped
