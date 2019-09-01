@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_L
       objectReference: {fileID: 0}
+    - target: {fileID: 5674848605992127036, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: alliance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744925124467692362, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: alliance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7742160166060802167, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,15 +77,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5674848605992127036, guid: ff07d6c4398925241962022fd8f468e9,
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
-      propertyPath: alliance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8744925124467692362, guid: ff07d6c4398925241962022fd8f468e9,
-        type: 3}
-      propertyPath: alliance
-      value: 0
+      propertyPath: spriteVariants.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
@@ -83,12 +88,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2743075176879964550, guid: 20eb579eac1c79e4e976baa20fdd3409,
         type: 3}
-    - target: {fileID: 640416589112899833, guid: ff07d6c4398925241962022fd8f468e9,
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
-      propertyPath: m_Sprite
+      propertyPath: spriteVariants.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 20604115d65c17946a100b55e96d6424,
         type: 3}
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: spriteVariants.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a8c21bbe41fb0664ba2d7953589eef42,
+        type: 3}
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: spriteVariants.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -5548362440580381775, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: spriteVariants.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7384373371485373837, guid: ff07d6c4398925241962022fd8f468e9,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -184,5 +205,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -0.07382554
       objectReference: {fileID: 0}
+    - target: {fileID: 640416589112899833, guid: ff07d6c4398925241962022fd8f468e9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 20604115d65c17946a100b55e96d6424,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff07d6c4398925241962022fd8f468e9, type: 3}

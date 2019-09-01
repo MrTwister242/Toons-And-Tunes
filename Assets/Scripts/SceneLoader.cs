@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     int splash = 0;
     int main = 1;
     int options = 2;
-    int gameOver = 3;
+    int endGame = 3;
     int firstLevel = 4;
 
     // state
@@ -63,7 +63,7 @@ public class SceneLoader : MonoBehaviour
         int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (sceneIndex == SceneManager.sceneCountInBuildSettings)
         {
-            LoadScene(gameOver);
+            LoadScene(endGame);
         }
         else
         {
@@ -79,7 +79,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGameOver()
     {
-        LoadScene(gameOver);
+        LoadScene(endGame);
     }
 
     public void StartGame()
@@ -102,6 +102,11 @@ public class SceneLoader : MonoBehaviour
         Application.Quit();
     }
 
+    public bool IsEndGame()
+    {
+        return (currentSceneIndex == endGame);
+    }
+
     private bool IsactiveEnemies()
     {
         bool isActiveEnemies = false;
@@ -115,5 +120,7 @@ public class SceneLoader : MonoBehaviour
         }
         return isActiveEnemies;
     }
+
+
 
 }

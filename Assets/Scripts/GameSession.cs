@@ -8,12 +8,16 @@ public class GameSession : MonoBehaviour
 
     // State
     //TODO: make private after debugging
-    [SerializeField] int currentLives;
-    [SerializeField] float score;
+    private int currentLives;
+    private float score;
+    private bool isDead;
+
 
     private void Awake()
     {
         currentLives = startingLives;
+        score = 0;
+        isDead = false;
         int numberOfGameSessions = FindObjectsOfType<GameSession>().Length;
         if (numberOfGameSessions > 1)
         {
@@ -46,6 +50,7 @@ public class GameSession : MonoBehaviour
         currentLives--;
         if(currentLives <= 0)
         {
+            isDead = true;
             GameOver();
         }
         else
@@ -64,6 +69,11 @@ public class GameSession : MonoBehaviour
     public void ResetSession()
     {
         Destroy(gameObject);
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 
 }

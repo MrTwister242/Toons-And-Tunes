@@ -15,6 +15,7 @@ MonoBehaviour:
   movementSpeed: 20
   numberOfFragments: 3
   nextLevelPrefab: {fileID: 0}
+  shatterSound: {fileID: 8300000, guid: e7ce713fe266d1440b9d0860ecda43f8, type: 3}
 --- !u!1001 &6010339550022662222
 PrefabInstance:
   m_ObjectHideFlags: 0

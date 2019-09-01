@@ -7,9 +7,17 @@ public class Asteroid : MonoBehaviour
     [SerializeField] [Range(0f, 40f)] float movementSpeed = 20f;
     [SerializeField] [Range(2, 6)] int numberOfFragments = 3;
     [SerializeField] GameObject nextLevelPrefab;
+    [SerializeField] Sprite[] spriteVariants;
+    [SerializeField] AudioClip shatterSound;
 
     // Cache
     private Rigidbody2D myRigidbody;
+
+    private void Awake()
+    {
+        int variantIndex = Random.Range(0, spriteVariants.Length);
+        GetComponentInChildren<SpriteRenderer>().sprite = spriteVariants[variantIndex];
+    }
 
     private void Start()
     {
@@ -28,6 +36,7 @@ public class Asteroid : MonoBehaviour
     {
         if (nextLevelPrefab != null)
         {
+            FindObjectOfType<AudioPlayer>().PlaySoundEffect(shatterSound);
             for (int i = 0; i < numberOfFragments; i++)
             {
                 GameObject fragment = Instantiate(nextLevelPrefab, transform.position, Quaternion.identity) as GameObject;

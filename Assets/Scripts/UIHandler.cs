@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
@@ -15,6 +16,22 @@ public class UIHandler : MonoBehaviour
     {
         RefreshLivesDisplay();
         RefreshScoreDisplay();
+        RefreshHeader();
+    }
+
+    private void RefreshHeader()
+    {
+        if (headerText.gameObject.activeInHierarchy && FindObjectOfType<SceneLoader>().IsEndGame())
+        {
+            if (FindObjectOfType<GameSession>().IsDead())
+            {
+                headerText.text = "Game Over!";
+            }
+            else
+            {
+                headerText.text = "You Won!";
+            }
+        }
     }
 
     private void RefreshScoreDisplay()
@@ -71,11 +88,6 @@ public class UIHandler : MonoBehaviour
         PlayButtonSound();
         FindObjectOfType<GameSession>().ResetSession();
         FindObjectOfType<SceneLoader>().StartGame();
-    }
-
-    public void UpdateHeader(string header)
-    {
-        headerText.text = header;
     }
 
     private void PlayButtonSound()

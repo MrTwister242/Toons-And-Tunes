@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
     [SerializeField] Alliance alliance = Alliance.neutral;
     [SerializeField] [Range(100f, 2000f)] float scoreValue = 500f;
     [SerializeField] AudioClip deathSound;
-    [SerializeField] AudioClip shatterSound;
 
     // State
     private float currentHealth;
@@ -60,7 +59,7 @@ public class Health : MonoBehaviour
                     if (asteroid != null)
                     {
                         asteroid.Shatter();
-                        FindObjectOfType<AudioPlayer>().PlaySoundEffect(shatterSound);
+
                     }
                     Destroy(gameObject);
                 }
