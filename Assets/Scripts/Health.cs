@@ -49,7 +49,7 @@ public class Health : MonoBehaviour
                 {
                     Destroy(gameObject);
                     FindObjectOfType<GameSession>().PlayerDies();
-                    AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position);
+                    FindObjectOfType<AudioPlayer>().PlaySoundEffect(deathSound);
                     //TODO: add delay
                 }
                 else
@@ -60,7 +60,7 @@ public class Health : MonoBehaviour
                     if (asteroid != null)
                     {
                         asteroid.Shatter();
-                        AudioSource.PlayClipAtPoint(shatterSound, Camera.main.transform.position);
+                        FindObjectOfType<AudioPlayer>().PlaySoundEffect(shatterSound);
                     }
                     Destroy(gameObject);
                 }

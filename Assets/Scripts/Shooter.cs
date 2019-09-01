@@ -53,11 +53,11 @@ public class Shooter : MonoBehaviour
             projectile.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, projectileSpeed));
             if (shootAutomatically)
             {
-                AudioSource.PlayClipAtPoint(enemyShootingSound, Camera.main.transform.position);
+                FindObjectOfType<AudioPlayer>().PlaySoundEffect(enemyShootingSound);
             }
             else
             {
-                AudioSource.PlayClipAtPoint(playerShootingSound, Camera.main.transform.position);
+                FindObjectOfType<AudioPlayer>().PlaySoundEffect(playerShootingSound);
             }
             float timeBetweenShots = projectileFiringInterval + (shootAutomatically ? projectileFiringVariance : 0f);
             yield return new WaitForSeconds(timeBetweenShots);

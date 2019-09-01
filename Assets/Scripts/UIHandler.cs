@@ -10,15 +10,6 @@ public class UIHandler : MonoBehaviour
     [SerializeField] RawImage[] livesImages;
     [SerializeField] AudioClip buttonSound;
 
-    // State
-    SceneLoader sceneLoader;
-    GameSession gameSession;
-
-    private void Start()
-    {
-        sceneLoader = FindObjectOfType<SceneLoader>();
-        gameSession = FindObjectOfType<GameSession>();
-    }
 
     private void LateUpdate()
     {
@@ -28,9 +19,10 @@ public class UIHandler : MonoBehaviour
 
     private void RefreshScoreDisplay()
     {
+
         if (scoreText.gameObject.activeInHierarchy)
         {
-            float score = gameSession.GetScore();
+            float score = FindObjectOfType<GameSession>().GetScore();
             scoreText.text = score.ToString();
         }
     }
@@ -39,7 +31,7 @@ public class UIHandler : MonoBehaviour
     {
         if (livesPanel.activeInHierarchy)
         {
-            int lives = gameSession.GetCurrentLives();
+            int lives = FindObjectOfType<GameSession>().GetCurrentLives();
             int iterations = livesImages.Length;
             for (int i = 0; i < iterations; i++)
             {
@@ -53,37 +45,32 @@ public class UIHandler : MonoBehaviour
     {
         PlayButtonSound();
         FindObjectOfType<GameSession>().ResetSession();
-        sceneLoader.StartGame();
+        FindObjectOfType<SceneLoader>().StartGame();
     }
 
     public void OnOptionsButtonPressed()
     {
         PlayButtonSound();
-        sceneLoader.LoadOptions();
+        FindObjectOfType<SceneLoader>().LoadOptions();
     }
 
     public void OnQuitButtonPressed()
     {
         PlayButtonSound();
-        sceneLoader.Quit();
+        FindObjectOfType<SceneLoader>().Quit();
     }
 
     public void OnBackButtonPressed()
     {
         PlayButtonSound();
-        sceneLoader.LoadMainMenu();
+        FindObjectOfType<SceneLoader>().LoadMainMenu();
     }
 
     public void OnPlayAgainButtonPressed()
     {
         PlayButtonSound();
         FindObjectOfType<GameSession>().ResetSession();
-        sceneLoader.StartGame();
-    }
-
-    public void UpdateScore(int score)
-    {
-        scoreText.text = score.ToString();
+        FindObjectOfType<SceneLoader>().StartGame();
     }
 
     public void UpdateHeader(string header)
@@ -93,6 +80,7 @@ public class UIHandler : MonoBehaviour
 
     private void PlayButtonSound()
     {
-        AudioSource.PlayClipAtPoint(buttonSound, Camera.main.transform.position);
+        //TODO: not working (due to changing scenes ?)
+        FindObjectOfType<AudioPlayer>().PlaySoundEffect(buttonSound);
     }
 }
