@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Shooter))]
@@ -18,6 +19,15 @@ public class PlayerInput : MonoBehaviour
     {
         Move();
         Shoot();
+        Quit();
+    }
+
+    private void Quit()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            FindObjectOfType<SceneLoader>().Quit();
+        }
     }
 
     private void Move()
