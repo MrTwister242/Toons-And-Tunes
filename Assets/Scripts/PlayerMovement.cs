@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         currentRotationSpeed = 0f;
     }
 
-    public void FreezeMovement()
+    public void FreezeMovementAndRotation()
     {
         myRigidbody.velocity = new Vector2(0, 0);
         currentRotationSpeed = 0f;

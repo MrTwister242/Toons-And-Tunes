@@ -22,47 +22,44 @@ public class PlayerInput : MonoBehaviour
 
     private void Move()
     {
-
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetAxis("Vertical") > 0f)
         {
             playerMovement.ThrustForward();
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetAxis("Vertical") < 0f)
         {
             playerMovement.ThrustBackward();
         }
 
         else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
-            playerMovement.FreezeMovement();
+            playerMovement.FreezeMovementAndRotation();
         }
 
-        else if (Input.GetKey(KeyCode.Q))
+        else if (Input.GetAxis("Horizontal") < 0f)
         {
             playerMovement.IncreaseCounterClockwiseRotation();
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetAxis("Horizontal") > 0f)
         {
             playerMovement.IncreaseClockwiseRotation();
         }
-
+                     
         playerMovement.Rotate();
-
     }
 
     private void Shoot()
     {
-        //TODO: Sometimes player gets stuck in continuous shooting
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
         {
             shooter.ToggleShooting(true);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Fire1"))
         {
             shooter.ToggleShooting(false);
-        }
+        }        
     }
 
 }
